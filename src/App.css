@@ -1,0 +1,648 @@
+/* ================= GLOBAL ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: black;
+  color: white;
+  padding-top: 80px; /* header space */
+}
+
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* ================= HEADER ================= */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: cyan;
+  text-shadow: 0 0 10px cyan;
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: cyan;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.nav a:hover {
+  color: yellow;
+  text-shadow: 0 0 5px cyan;
+}
+
+.hire-btn {
+  padding: 10px 18px;
+  border: none;
+  background: cyan;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0 0 10px cyan;
+  transition: 0.3s;
+}
+
+
+.hire-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px cyan;
+}
+
+/* ================= HERO ================= */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 60px;
+}
+
+.hero-subtitle {
+  margin-top: 10px;
+  color: #aaa;
+}
+
+.canvas-container {
+  width: 100%;
+  height: 400px;
+  margin-top: 20px;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about {
+  background: #0a0a0a;
+  color: white;
+  perspective: 1000px;
+}
+
+.about h2 {
+  font-size: 38px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px cyan;
+}
+
+/* TEXT */
+.about-text {
+  max-width: 750px;
+  margin: 10px auto;
+  color: #aaa;
+  line-height: 1.7;
+  font-size: 15px;
+  animation: fadeUp 1s ease forwards;
+}
+
+/* CARDS CONTAINER */
+.about-cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+/* CARD 3D EFFECT */
+.card {
+  background: #111;
+  padding: 25px;
+  border-radius: 15px;
+  min-width: 220px;
+  transition: 0.4s;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 10px rgba(0,255,255,0.2);
+}
+
+/* HOVER 3D */
+.card:hover {
+  transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+  box-shadow: 0 0 25px cyan;
+}
+
+/* TITLE */
+.card h3 {
+  margin-bottom: 10px;
+  color: cyan;
+  text-shadow: 0 0 5px cyan;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= PROJECTS ================= */
+/* ===== TITLE ===== */
+.project-title {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: cyan;
+  text-shadow: 0 0 15px cyan;
+}
+
+/* GRID */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  padding: 20px;
+}
+
+/* CARD BASE */
+.project-card {
+  perspective: 1000px;
+}
+
+/* INNER (3D ROTATION) */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+/* ROTATE ON HOVER */
+.project-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* FRONT & BACK */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FRONT */
+.card-front {
+  background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+  border: 1px solid rgba(0,255,255,0.2);
+  box-shadow: 0 0 20px rgba(0,255,255,0.2);
+}
+
+.card-front h3 {
+  color: cyan;
+  margin-bottom: 10px;
+}
+
+.tech {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* BACK */
+.card-back {
+  background: #000;
+  transform: rotateY(180deg);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 25px cyan;
+}
+
+.card-back p {
+  color: #ccc;
+  font-size: 14px;
+}
+
+/* BUTTON */
+.card-back button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border: none;
+  background: cyan;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.card-back button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px cyan;
+}
+
+/* GLOW ANIMATION */
+.project-card:hover {
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px #CE4420;
+  }
+  to {
+    box-shadow: 0 0 25px  #CE4420;
+  }
+}
+/* ===== CONTACT LAYOUT ===== */
+.contact {
+  background: #050505;
+  color: white;
+  padding: 100px 20px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* ===== CHARACTER ===== */
+.character {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background: #111;
+  border-radius: 50%;
+  box-shadow: 0 0 20px cyan;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* FACE */
+.face {
+  position: absolute;
+  top: 30px;
+  left: 25px;
+}
+
+/* EYES */
+.eyes {
+  display: flex;
+  gap: 20px;
+}
+
+.eye {
+  width: 15px;
+  height: 15px;
+  background: cyan;
+  border-radius: 50%;
+  animation: blink 3s infinite;
+}
+
+/* MOUTH */
+.mouth {
+  width: 30px;
+  height: 5px;
+  background: cyan;
+  margin-top: 10px;
+}
+
+/* HAND (POINTING) */
+.hand {
+  position: absolute;
+  right: -30px;
+  top: 60px;
+  width: 40px;
+  height: 8px;
+  background: cyan;
+  transform-origin: left;
+  animation: point 1s infinite alternate;
+}
+
+/* SPEECH */
+.speech {
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  background: cyan;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  animation: pop 2s infinite;
+}
+
+/* ===== CONTACT INFO ===== */
+.contact {
+  background: radial-gradient(circle at center, #000, #050505);
+  padding: 120px 20px;
+  text-align: center;
+  color: white;
+}
+
+.contact-title {
+  font-size: 40px;
+  margin-bottom: 60px;
+  color: cyan;
+  text-shadow: 0 0 20px cyan;
+}
+
+/* WRAPPER */
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+/* ===== AVATAR ===== */
+.avatar-container {
+  position: relative;
+  width: 220px;
+  height: 220px;
+}
+
+/* GLOW BG */
+.avatar-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: yellow;
+  filter: blur(50px);
+  opacity: 0.3;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* IMAGE */
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid cyan;
+  position: relative;
+  z-index: 2;
+}
+
+/* ROTATING RING */
+.avatar-ring {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 240px;
+  height: 240px;
+  border: 2px dashed yellow;
+  border-radius: 50%;
+  animation: rotate 6s linear infinite;
+}
+
+/* SPEECH */
+.avatar-speech {
+  position: absolute;
+  bottom: -70px;
+  left: -30px;
+  background: cyan;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  animation: float 2s infinite;
+}
+
+/* ===== INFO ===== */
+.contact-info {
+  max-width: 350px;
+}
+
+.info-box {
+  background: #111;
+  padding: 15px;
+  margin: 12px 0;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.info-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px cyan;
+}
+
+.hire-btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: cyan;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.hire-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px cyan;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%,100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .header {
+    padding: 15px 30px;
+  }
+
+  .hero-title {
+    font-size: 45px;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+  }
+
+  .canvas-container {
+    height: 250px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .hire-btn {
+    width: 100%;
+  }
+}
+/* ================= 🎪 BALLOON SHOP (SKILLS) ================= */
+
+.skills {
+  padding: 100px 20px;
+  background: radial-gradient(circle at center, #000000, #050505);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* TITLE */
+.skills-title {
+  font-size: 42px;
+  margin-bottom: 40px;
+  color: #00ffff;
+  text-shadow: 0 0 20px cyan, 0 0 40px cyan;
+  letter-spacing: 2px;
+}
+
+/* CANVAS AREA */
+.skills-canvas {
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+
+  /* glass effect */
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+
+  /* glow border */
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.1);
+}
+
+/* OPTIONAL BACKGROUND GLOW */
+.skills::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: cyan;
+  filter: blur(120px);
+  opacity: 0.15;
+  top: 20%;
+  left: 10%;
+  animation: floatGlow 6s infinite ease-in-out;
+}
+
+.skills::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: magenta;
+  filter: blur(120px);
+  opacity: 0.15;
+  bottom: 20%;
+  right: 10%;
+  animation: floatGlow 8s infinite ease-in-out;
+}
+
+/* ANIMATION */
+@keyframes floatGlow {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .skills-title {
+    font-size: 30px;
+  }
+
+  .skills-canvas {
+    height: 350px;
+  }
+}

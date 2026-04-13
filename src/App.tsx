@@ -234,7 +234,7 @@ function BalloonShop() {
 
   return (
     <section id="skills" className="skills">
-      <h2 className="skills-title">🎪 Balloon Shop Skills</h2>
+      <h2 className="skills-title">🎪 MY Skills</h2>
 
       <div className="skills-canvas">
         <Canvas camera={{ position: [0, 2, 8] }}>

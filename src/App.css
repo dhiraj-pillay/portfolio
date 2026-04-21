@@ -103,17 +103,23 @@ section {
 
 .hero-title {
   font-size: 60px;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-subtitle {
   margin-top: 10px;
   color: #aaa;
+  position: relative;
+  z-index: 2; 
 }
 
 .canvas-container {
   width: 100%;
   height: 400px;
   margin-top: 20px;
+  position: relative;
+  z-index: 1; 
 }
 
 /* ===== ABOUT SECTION ===== */
@@ -536,7 +542,10 @@ section {
   }
 
   .hero-title {
-    font-size: 32px;
+    font-size: 28px;
+    margin-top: 20px;
+    z-index: 2;
+
   }
 
   .hero-subtitle {
@@ -545,6 +554,7 @@ section {
 
   .canvas-container {
     height: 250px;
+    z-index: 1;
   }
 
   .project-grid {

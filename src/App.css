@@ -555,9 +555,9 @@ section {
     width: 90%;
   }
 
-  .hire-btn {
-    width: 100%;
+  .header .hire-btn  {
     display: none;
+    
   }
 }
 /* ================= 🎪 BALLOON SHOP (SKILLS) ================= */

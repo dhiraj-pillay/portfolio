@@ -34,7 +34,7 @@ function Cube() {
 // 3D Sphere
 function Sphere() {
   return (
-    <Float speed={2}>
+    <Float speed={4}>
       <mesh position={[3, 0, 0]}>
         <sphereGeometry args={[1.2, 32, 32]} />
         <meshStandardMaterial color="#ff00ff" wireframe />
@@ -234,7 +234,7 @@ function BalloonShop() {
 
   return (
     <section id="skills" className="skills">
-      <h2 className="skills-title">🎪 MY Skills</h2>
+      <h2 className="skills-title">🎪 MY  Skills</h2>
 
       <div className="skills-canvas">
         <Canvas camera={{ position: [0, 2, 8] }}>
@@ -296,7 +296,7 @@ function Contact() {
 
         </div>
 
-        {/* INFO SIDE */}
+      
         <div className="contact-info">
 
           <div className="info-box">📧 pillaydhiraj4@email.com</div>
@@ -323,5 +323,4 @@ export default function App() {
       <Contact />
     </div>
   );
-}
-
+}  

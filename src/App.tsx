@@ -289,7 +289,7 @@ function Contact() {
           <div className="avatar-ring"></div>
 
           <div className="avatar-speech">
-            👋 Hey! I'm Dhiraj  
+            👋 Hey! I'm Dhiraj 
             <br />
             Let's build something awesome!
           </div>
@@ -303,7 +303,7 @@ function Contact() {
           <div className="info-box">📱 @yourhandle</div>
           <div className="info-box">📞 +919510523208 </div>
 
-          <button className="hire-btn">Hire Me</button>
+          <button className="hire-btn" onClick={() => window.open("https://wa.me/919510523208", "_blank")}>Hire Me</button>
 
         </div>
 
